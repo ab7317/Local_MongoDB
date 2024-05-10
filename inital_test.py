@@ -8,9 +8,13 @@ class MongoDBClient:
         self.db = self.client[db_name]
 
     def get_collections(self):
-        collection_names = self.db.list_collection_names()
-        #print(collection_names)
-        return collection_names
+        return self.db.list_collection_names()
+    
+    def get_collection_content(self, collection_name):
+        return list(self.db[collection_name].find())
+    
+    def insert_row_collection(self, )
+
 
 Client = MongoDBClient("mongodb://localhost:27017/", "test_csv")
-Client.get_collections()
+print(Client.get_collection_content("2024-05-09_17-00_CoinM"))
