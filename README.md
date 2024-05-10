@@ -11,6 +11,9 @@ This will have the class to interact with MongoDB, it can be used to push csv fi
 - URI -> "mongodb://localhost:27017/"
 When sending queries you can filter for greater than and less than with the following syntax
 - All example below use the FB_Assets table
+```
+result = Client.query([{"Coin":"ATOM"}, {"USDValue": {"$gt": 1000000}}, {"Date": {"$lt":"2024-05-10"}}], "FB_Assets")
+```
 - [{"Coin":"ATOM"}, {"USDValue": {"$gt": 1000000}}] This query would find all ATOM's with a USDValue greater than 1000000
 ```
                          _id  Coin Contract        QTY    USDValue    Exchange Account  Unnamed: 6   Time        Date
