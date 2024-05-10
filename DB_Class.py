@@ -18,10 +18,13 @@ class MongoDBClient:
         print("Row added to collection!")
 
     def insert_csv_collection(self, collection_name, csv_path):
-        csv_dict = pd.read_csv(csv_path).to_dict(orient="records")
-        for csv in csv_dict:
-           self.db[collection_name].insert_one(csv) 
-        print("CSV added!")
+        try:
+            csv_dict = pd.read_csv(csv_path).to_dict(orient="records")
+            for csv in csv_dict:
+                self.db[collection_name].insert_one(csv) 
+                print("CSV added!")
+        except:
+            print(f"{collection_name}")
 
     def query_collection_cols(self, collection_name, cols_to_query):
         print(list(self.db[collection_name].find(
@@ -44,3 +47,9 @@ class MongoDBClient:
                 if _file[-3:] == "csv":
                     full_path_list.append(f"{csv_dir_path}/{directory}/{_file}")
         return full_path_list
+    
+    def insert_csv_dir_collection(self, csv_full_path_list):
+        for csv_path in csv_full_path_list:
+            collection_name = f"{csv_path.split('/')[-2]}_{csv_path.split('/')[-1]}"
+            self.insert_csv_collection(collection_name, csv_path)
+        print("Files added")
