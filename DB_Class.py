@@ -48,4 +48,15 @@ class MongoDBClient:
         except Exception as e:
             print(f"{collection_name} ERROR: {e}")
 
-    
+    def query(self, symbol: str, collection_name: str):
+        try:
+            query_filter = {"Symbol": symbol}
+            result = self.db[collection_name].find(query_filter)
+            print(pd.DataFrame(list(result)))
+        except:
+            try:
+                query_filter = {"Coin": symbol}
+                result = self.db[collection_name].find(query_filter)
+                print(pd.DataFrame(list(result)))
+            except:
+                print('Error')
