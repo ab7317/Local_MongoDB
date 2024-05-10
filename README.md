@@ -109,3 +109,18 @@ result = Client.query([{"Coin":"ATOM"}, {"USDValue": {"$gt": 1000000}}, {"Date":
 16  663e22e3e60ff32ccc0db40b            Huobi       0.00        0.00     0.0        0.00       0.00        0.00         NaN  12-00  2024-05-10
 17  663e22e3e60ff32ccc0db40c           Kraken       0.00        0.00     0.0  1678090.88       0.00  1678090.88         NaN  12-00  2024-05-10
 ```
+- We can also run formulas on queries for example the following code will give us the total balance at 12
+```
+Client = mc.MongoDBClient("mongodb://localhost:27017/", "test_new")
+
+result = Client.query([{"Date": "2024-05-10"}, {"Time": "12-00"}, {"Exchange": {"$ne": "Totals"}}], "Breakdown")
+
+sum_of_atom = result['Total'].sum()
+
+print(sum_of_atom)
+``
+- Which would output
+```
+8455175.919999998
+```
+- Which we can check is correct
