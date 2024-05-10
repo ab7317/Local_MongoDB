@@ -12,11 +12,11 @@ Client = mc.MongoDBClient("mongodb://localhost:27017/", "test_new")
 
 #print(Client.get_collection_content("CoinM"), "\n##########################")
 
-result = Client.query([{"Coin":"ATOM"}, {"USDValue": {"$gt": 1000000}}, {"Date": {"$lt":"2024-05-10"}}], "FB_Assets")
+result = Client.query([{"Date": "2024-05-10"}, {"Time": "12-00"}], "Breakdown")
 
 print(result)
 
-sum_of_atom = result['USDValue'].sum()
+sum_of_atom = result['Total'].sum()
 
 print(sum_of_atom)
 
