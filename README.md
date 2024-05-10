@@ -1,13 +1,13 @@
 # Local_MongoDB
 
-##Description 
+## Description 
 This will have the class to interact with MongoDB, it can be used to push csv files to mongoDB or preform other functions on a database
 
-##Setup
+## Setup
 - service name - MongoDB
 - version - 7.0.9
 
-##DB
+## DB
 - URI -> "mongodb://localhost:27017/"
 When sending queries you can filter for greater than and less than with the following syntax
 - All example below use the FB_Assets table
