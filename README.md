@@ -87,3 +87,25 @@ result = Client.query([{"Coin":"ATOM"}, {"USDValue": {"$gt": 1000000}}, {"Date":
 6  663e22d1e60ff32ccc0d84c0  ATOM     ATOM  195488.49  1762719.68  FireBlocks    SPOT         NaN  22-00  2024-05-09
 7  663e22d2e60ff32ccc0d8858  ATOM     ATOM  195491.91  1767246.88  FireBlocks    SPOT         NaN  23-00  2024-05-09
 ```
+- [{"Date": "2024-05-10"}, {"Time": "12-00"}, {"Exchange": {"$ne": "Totals"}}] This query will exlude a specific value
+```
+                         _id         Exchange     USDT-M        SPOT  MARGIN        EARN     COIN-M       Total  Unnamed: 7   Time        Date
+0   663e22e3e60ff32ccc0db3fb        Banks/adj       0.00    68374.36     0.0  -693017.60       0.00  -624643.24         NaN  12-00  2024-05-10
+1   663e22e3e60ff32ccc0db3fc          Binance  322982.60   147131.71     0.0        0.01  308282.79   778397.12         NaN  12-00  2024-05-10
+2   663e22e3e60ff32ccc0db3fd       Binance_HR       0.00        0.11     0.0        0.00       0.00        0.11         NaN  12-00  2024-05-10
+3   663e22e3e60ff32ccc0db3fe     Binance_Sub1       0.00        0.00     0.0        0.00   67419.60    67419.60         NaN  12-00  2024-05-10
+4   663e22e3e60ff32ccc0db3ff     Binance_Sub2       0.00        0.00     0.0        0.00   68616.06    68616.06         NaN  12-00  2024-05-10
+5   663e22e3e60ff32ccc0db400     Binance_Sub3       0.00        0.00     0.0        0.00   20822.33    20822.33         NaN  12-00  2024-05-10
+6   663e22e3e60ff32ccc0db401     Binance_Sub4   67840.45        0.11     0.0        0.00       0.00    67840.56         NaN  12-00  2024-05-10
+7   663e22e3e60ff32ccc0db402            Bybit  209054.60        0.00     0.0        0.00       0.00   209054.60         NaN  12-00  2024-05-10
+8   663e22e3e60ff32ccc0db403         Bybit_HR   43583.46        0.00     0.0        0.00       0.00    43583.46         NaN  12-00  2024-05-10
+9   663e22e3e60ff32ccc0db404       Bybit_Sub1  215601.96        0.00     0.0        0.00       0.00   215601.96         NaN  12-00  2024-05-10
+10  663e22e3e60ff32ccc0db405       FireBlocks       0.00  4993016.54     0.0        0.00       0.00  4993016.54         NaN  12-00  2024-05-10
+11  663e22e3e60ff32ccc0db406  FireBlocks_Bond       0.00    52006.96     0.0        0.00       0.00    52006.96         NaN  12-00  2024-05-10
+12  663e22e3e60ff32ccc0db407  FireBlocks_Cold       0.00     1028.23     0.0        0.00       0.00     1028.23         NaN  12-00  2024-05-10
+13  663e22e3e60ff32ccc0db408             Gate  156359.35        0.00     0.0        0.00       0.00   156359.35         NaN  12-00  2024-05-10
+14  663e22e3e60ff32ccc0db409              HRP       0.00     7786.21     0.0        0.00       0.00     7786.21         NaN  12-00  2024-05-10
+15  663e22e3e60ff32ccc0db40a           Hercle  720195.19        0.00     0.0        0.00       0.00   720195.19         NaN  12-00  2024-05-10
+16  663e22e3e60ff32ccc0db40b            Huobi       0.00        0.00     0.0        0.00       0.00        0.00         NaN  12-00  2024-05-10
+17  663e22e3e60ff32ccc0db40c           Kraken       0.00        0.00     0.0  1678090.88       0.00  1678090.88         NaN  12-00  2024-05-10
+```
