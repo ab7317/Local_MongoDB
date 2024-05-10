@@ -118,7 +118,7 @@ result = Client.query([{"Date": "2024-05-10"}, {"Time": "12-00"}, {"Exchange": {
 sum_of_atom = result['Total'].sum()
 
 print(sum_of_atom)
-``
+```
 - Which would output
 ```
 8455175.919999998
