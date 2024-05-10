@@ -28,10 +28,3 @@ class MongoDBClient:
         {field: {"$exists": True} for field in cols_to_query},
         {field: 1 for field in cols_to_query + ["_id"]}
         )))
-
-
-Client = MongoDBClient("mongodb://localhost:27017/", "test_csv")
-Client.query_collection_cols("2024-05-09_17-00_CoinM_2", ["Exchange", "LiqRisk"])
-#print(Client.get_collections())
-#Client.insert_csv_collection("2024-05-09_17-00_CoinM_2", "C:/Users/Administrator/Code/rusty_snapshots/snapshots/2024-05-09_17-00/CoinM.csv")
-#print(Client.get_collection_content("2024-05-09_17-00_CoinM_2"))
