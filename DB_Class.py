@@ -43,20 +43,15 @@ class MongoDBClient:
             df['Date'] = csv_path.split('/')[-2].split("_")[0]
             csv_dict = df.to_dict(orient="records")
             for csv in csv_dict:
-                self.db[collection_name].create_index([('Symbol', 1)], unique=True)
+                #self.db[collection_name].create_index([('Symbol', 1)], unique=True)
                 self.db[collection_name].insert_one(csv) 
         except Exception as e:
             print(f"{collection_name} ERROR: {e}")
 
-    def query(self, symbol: str, collection_name: str):
+    def query(self, field: str, param: str, collection_name: str):
         try:
-            query_filter = {"Symbol": symbol}
+            query_filter = {field: param}
             result = self.db[collection_name].find(query_filter)
             print(pd.DataFrame(list(result)))
         except:
-            try:
-                query_filter = {"Coin": symbol}
-                result = self.db[collection_name].find(query_filter)
-                print(pd.DataFrame(list(result)))
-            except:
-                print('Error')
+            print('Error')
