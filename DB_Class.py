@@ -48,11 +48,14 @@ class MongoDBClient:
         except Exception as e:
             print(f"{collection_name} ERROR: {e}")
 
-    def query(self, query_filter: list, collection_name: str):
+    def query(self, query_filter: list, collection_name: str, calculation: bool, sum_col: str):
         try:
             combined_filter = {'$and': query_filter}
             result = self.db[collection_name].find(combined_filter)
-            print(pd.DataFrame(list(result)))
+
+            if calculation:
+                print(result[sum_col].sum())
+
             return pd.DataFrame(list(result))
         except Exception as e:
             print(f'Error: {e}')  
