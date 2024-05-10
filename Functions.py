@@ -12,7 +12,7 @@ Client = mc.MongoDBClient("mongodb://localhost:27017/", "test_new")
 
 print(Client.get_collection_content("CoinM"), "\n##########################")
 
-Client.query("Time", "17-00", "CoinM")
+Client.query([{"Coin":"ATOM"}, {"Lever": {"$gt": 3}}], "CoinM")
 
 csv_files = Client.build_csv_path_list("C:/Users/Administrator/Code/rusty_snapshots/snapshots")
 
