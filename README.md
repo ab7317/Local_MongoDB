@@ -6,3 +6,7 @@ This will have the class to interact with MongoDB, it can be used to push csv fi
 ##Setup
 - service name - MongoDB
 - version - 7.0.9
+
+##DB
+- URI -> "mongodb://localhost:27017/"
+- 
