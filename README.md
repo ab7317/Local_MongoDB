@@ -72,3 +72,15 @@ When sending queries you can filter for greater than and less than with the foll
 3  663e22d1e60ff32ccc0d84c0  ATOM     ATOM  195488.49  1762719.68  FireBlocks    SPOT         NaN  22-00  2024-05-09
 4  663e22d2e60ff32ccc0d8858  ATOM     ATOM  195491.91  1767246.88  FireBlocks    SPOT         NaN  23-00  2024-05-09
 ```
+- [{"Coin":"ATOM"}, {"USDValue": {"$gt": 1000000}}, {"Date": {"$lt":"2024-05-10"}}]
+```
+                        _id  Coin Contract        QTY    USDValue    Exchange Account  Unnamed: 6   Time        Date
+0  663e187a99e266a47e259b19  ATOM     ATOM  195470.78  1752004.57  FireBlocks    SPOT         NaN  17-00  2024-05-09
+1  663e22c9e60ff32ccc0d72c8  ATOM     ATOM  195470.78  1752004.57  FireBlocks    SPOT         NaN  17-00  2024-05-09
+2  663e22cbe60ff32ccc0d7665  ATOM     ATOM  195474.77  1747348.97  FireBlocks    SPOT         NaN  18-00  2024-05-09
+3  663e22cce60ff32ccc0d79fc  ATOM     ATOM  195478.20  1758326.45  FireBlocks    SPOT         NaN  19-00  2024-05-09
+4  663e22cee60ff32ccc0d7d91  ATOM     ATOM  195481.62  1779664.64  FireBlocks    SPOT         NaN  20-00  2024-05-09
+5  663e22cfe60ff32ccc0d8128  ATOM     ATOM  195485.05  1767575.84  FireBlocks    SPOT         NaN  21-00  2024-05-09
+6  663e22d1e60ff32ccc0d84c0  ATOM     ATOM  195488.49  1762719.68  FireBlocks    SPOT         NaN  22-00  2024-05-09
+7  663e22d2e60ff32ccc0d8858  ATOM     ATOM  195491.91  1767246.88  FireBlocks    SPOT         NaN  23-00  2024-05-09
+```
